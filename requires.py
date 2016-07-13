@@ -15,7 +15,6 @@
 import json
 
 import charms.reactive as reactive
-import charmhelpers.core.hookenv as hookenv
 
 
 class BarbicanRequires(reactive.RelationBase):
@@ -35,16 +34,16 @@ class BarbicanRequires(reactive.RelationBase):
     # with a basic documentation string provided.
     auto_accessors = ['_name', '_plugin_data']
 
-    @reactive.hook('{requires:barbican-hsm-plugin}-relation-joined')
+    @reactive.hook('{requires:barbican-hsm}-relation-joined')
     def joined(self):
         self.set_state('{relation_name}.connected')
         self.update_status()
 
-    @reactive.hook('{requires:barbican-hsm-plugin}-relation-changed')
+    @reactive.hook('{requires:barbican-hsm}-relation-changed')
     def changed(self):
         self.update_status()
 
-    @reactive.hook('{requires:barbican-hsm-plugin}-relation-{broken,departed}')
+    @reactive.hook('{requires:barbican-hsm}-relation-{broken,departed}')
     def departed(self):
         self.remove_state('{relation_name}.connected')
         self.remove_state('{relation_name}.available')

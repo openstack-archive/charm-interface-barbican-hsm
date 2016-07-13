@@ -1,4 +1,4 @@
-name: barbican-hsm-plugin
+name: barbican-hsm
 summary: Interface for a plugin to the Barbican charm.
 maintainer: OpenStack Charmers <openstack-charmers@lists.ubuntu.com>
-repo: https://github.com/openstack-charmers/charm-interface-barbican-plugin
+repo: https://github.com/openstack-charmers/charm-interface-barbican

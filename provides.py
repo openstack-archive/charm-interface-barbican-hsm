@@ -15,11 +15,10 @@
 import json
 
 import charms.reactive as reactive
-import charmhelpers.core.hookenv as hookenv
 
 
 class BarbicanProvides(reactive.RelationBase):
-    """This is the barbican-{type}hsm-plugin end of the relation
+    """This is the barbican-{type}hsm end of the relation
 
     The HSM provider needs to set it's name (which may be relevant) and
     also provide any plugin data to Barbican.
@@ -38,16 +37,16 @@ class BarbicanProvides(reactive.RelationBase):
     # with a basic documentation string provided.
     auto_accessors = []
 
-    @reactive.hook('{provides:barbican-hsm-plugin}-relation-joined')
+    @reactive.hook('{provides:barbican-hsm}-relation-joined')
     def joined(self):
         self.set_state('{relation_name}.connected')
         self.set_state('{relation_name}.available')
 
-    @reactive.hook('{provides:barbican-hsm-plugin}-relation-changed')
+    @reactive.hook('{provides:barbican-hsm}-relation-changed')
     def changed(self):
         pass
 
-    @reactive.hook('{provides:barbican-hsm-plugin}-relation-{broken,departed}')
+    @reactive.hook('{provides:barbican-hsm}-relation-{broken,departed}')
     def departed(self):
         self.remove_state('{relation_name}.available')
         self.remove_state('{relation_name}.connected')
