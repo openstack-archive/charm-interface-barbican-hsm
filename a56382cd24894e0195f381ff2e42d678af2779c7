@@ -1,0 +1,9 @@
+Verified+1: Canonical CI <uosci-testing-bot@ubuntu.com>
+Code-Review+2: Liam Young <liam.young@canonical.com>
+Workflow+1: Liam Young <liam.young@canonical.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 05 Oct 2018 08:59:37 +0000
+Reviewed-on: https://review.openstack.org/608014
+Project: openstack/charm-interface-barbican-hsm
+Branch: refs/heads/master
